@@ -1,0 +1,185 @@
+/* Base navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #2D3748; /* Slate background */
+    position: relative;
+  }
+  
+  .navbar-logo {
+    font-weight: bold;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .navbar-logo img {
+    width: 33px;
+  }
+  
+  /* Mobile hamburger menu */
+  .hamburger-button {
+    display: flex;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Main menu buttons (desktop view) */
+  .menu-list {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+  
+  .menu-list li {
+    list-style: none;
+  }
+  
+  .menu-list button {
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-radius: 5px;
+    background: linear-gradient(to right, #6B46C1, #3182CE);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu-list button:hover {
+    background: linear-gradient(to left, #6B46C1, #3182CE);
+  }
+  
+  .menu-list button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
+  }
+  
+  .hamburger-button svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Mobile menu styles */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Initially off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: #2D3748; /* Same background as navbar */
+    transition: right 0.3s ease-in-out; /* Slide-in transition */
+    z-index: 1000;
+    padding: 20px;
+  }
+  
+  .mobile-menu.open {
+    right: 0; /* Slide in when active */
+  }
+  
+  /* Mobile menu items */
+  .mobile-menu ul {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 20px; /* Add space between buttons */
+    align-items: flex-start; /* Align items to the left */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mobile-menu li {
+    list-style: none;
+    width: 100%; /* Make buttons take up full width */
+  }
+  
+  .mobile-menu button {
+    width: 100%; /* Ensure buttons take full width of container */
+    text-align: left; /* Align text to the left */
+    word-wrap: break-word; /* Allow text to wrap if needed */
+    padding: 12px 24px; /* Adjust padding for mobile view */
+  }
+  
+  .mobile-menu button:hover {
+    background: linear-gradient(to left, #6B46C1, #3182CE);
+  }
+  
+  /* For mobile, hide menu items on screen smaller than 768px */
+  @media (max-width: 768px) {
+    /* Hide desktop menu for mobile */
+    .menu-list {
+      display: none; /* Hide menu on mobile */
+    }
+  
+    /* Mobile-specific styles */
+    .mobile-menu {
+      display: block; /* Show mobile menu if needed */
+    }
+  
+    /* Mobile menu items */
+    .mobile-menu ul {
+      display: flex;
+      flex-direction: column; /* Stack buttons vertically */
+      gap: 20px; /* Add space between buttons */
+      align-items: flex-start; /* Align items to the left */
+      padding: 0;
+      margin: 0;
+    }
+  
+    .mobile-menu button {
+      padding: 12px 24px; /* Adjust padding for better mobile experience */
+      width: 100%; /* Ensure buttons take full width of container */
+      text-align: left; /* Align text to the left */
+    }
+  
+    .mobile-menu button:hover {
+      background: linear-gradient(to left, #6B46C1, #3182CE);
+    }
+  }
+  
+  /* Additional styles for the dropdown (if using a user dropdown) */
+  .dropdown-menu {
+    position: absolute;
+    top: 100%; /* Position dropdown directly below the button */
+    left: 0;
+    background-color: #2D3748;
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+  }
+  
+  .dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .dropdown-menu li {
+    margin-bottom: 10px;
+  }
+  
+  .dropdown-menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #3182CE; /* Hover color */
+  }
+  
+  /* Add other styles as needed */
+  
+  /* Ensure focus styles are visible */
+  :focus-visible {
+    outline: 2px solid #3182CE;
+  }
+  
